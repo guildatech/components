@@ -26,7 +26,7 @@ export default class Button extends Component {
       >
         {this.props.title}
 
-        <style jsx>{`
+        <style jsx="true">{`
           button {
             color: black;
             background: var(--guildatech-color-primary);

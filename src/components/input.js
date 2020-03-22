@@ -45,7 +45,7 @@ export default class Input extends Component {
           </label>
         </div>
 
-        <style jsx>{`
+        <style jsx="true">{`
           .field,
           .field.control {
             position: relative;

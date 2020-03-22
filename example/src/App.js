@@ -103,7 +103,7 @@ export default class App extends Component {
                 </article>
 
         </main>
-        <style jsx>{`
+        <style jsx="true">{`
        header{
          height: 50px;
          background: var(--guildatech-color-primary)

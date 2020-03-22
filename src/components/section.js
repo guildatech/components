@@ -9,7 +9,7 @@ export default class Section extends Component {
     return (
       <Fragment>
         <section>{this.props.children}</section>
-        <style jsx>{`
+        <style jsx="true">{`
           section {
             border: 1px solid var(--guildatech-color-primary);
             min-height: 450px;

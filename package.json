@@ -1,6 +1,6 @@
 {
   "name": "@guildatech/guildatech-components",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Componentes react para o site da guildatech",
   "author": "GuildaTech",
   "license": "MIT",
@@ -22,7 +22,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "ckeditor4-react": "^1.1.0"},
+    "ckeditor4-react": "^1.1.0"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
@@ -38,13 +39,13 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
-    "eslint": "^5.0.1",
+    "eslint": "^6.8.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^3.1.0",
     "gh-pages": "^1.2.0",
     "react": "^16.4.1",

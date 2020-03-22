@@ -36,7 +36,7 @@ export default class Textarea extends Component {
           </label>
         </div>
 
-        <style jsx>{`
+        <style jsx="true">{`
           .field,
           .field.control {
             position: relative;
@@ -49,7 +49,7 @@ export default class Textarea extends Component {
             border: 1px solid var(--guildatech-color-primary);
             position: relative;
             display: block;
-            width: 99%;
+            width: 98%;
             outline-color: var(--guildatech-color-primary) !important;
           }
           textarea[invalid='true'] {
@@ -83,7 +83,3 @@ export default class Textarea extends Component {
     );
   }
 }
-Textarea.propTypes = {
-  invalid: PropTypes.bool,
-  required: PropTypes.bool,
-};

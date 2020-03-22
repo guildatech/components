@@ -35,7 +35,7 @@ export default class Alert extends Component {
             </div>
             
           : null}
-          <style jsx>{`
+          <style jsx="true">{`
         .alert > .action {
           font-size: 12px;
           position: absolute;

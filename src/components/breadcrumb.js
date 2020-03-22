@@ -10,8 +10,8 @@ export default class Breadcrumb extends Component {
         <small>
           Voce está em <b>{this.props.path}</b>
         </small>
-        <style jsx>{`
-          small: {
+        <style jsx="true">{`
+          small {
             color: #0b0b0b;
           }
         `}</style>
