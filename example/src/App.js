@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Button , Input, Section, Alert, Breadcrumb}from 'gt-components'
+import { Button , Input, Section, Alert, Breadcrumb, GTEditor}from 'gt-components'
 
 export default class App extends Component {
   render () {
@@ -52,8 +52,21 @@ export default class App extends Component {
 
             <br/>
             <Alert closable>closable</Alert>
+            <br/>
             <Alert collapsible>collapsible</Alert>
             
+            <br/>
+            <Alert closable danger>closable</Alert>
+            <br/>
+            <Alert collapsible success>collapsible</Alert>
+          </article>
+
+          <article>
+            <h4>Editor</h4>
+
+          <GTEditor
+                id="post_body"
+              />
           </article>
         </main>
         <style jsx>{`

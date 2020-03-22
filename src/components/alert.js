@@ -64,8 +64,8 @@ export default class Alert extends Component {
             
           }
           
-          .alert.success ,
-          .alert.success > .action::hover {
+          .alert.success,
+          .alert.success > .action:hover {
               border-color: var(--guildatech-color-green) !important;
               color: var(--guildatech-color-green-darker) !important;
           }
