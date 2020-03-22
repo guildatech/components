@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Button , Input, Section, Alert, Breadcrumb, GTEditor, Textarea, RenderHTML }from 'gt-components'
+import { Button , Input, Section, Alert, Breadcrumb, GTEditor, Textarea, RenderHTML }from 'guildatech-components'
 
 export default class App extends Component {
 

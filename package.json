@@ -4,7 +4,7 @@
   "description": "Componentes react para o site da guildatech",
   "author": "GuildaTech",
   "license": "MIT",
-  "repository": "GuildaTech/gt-components",
+  "repository": "GuildaTech/guildatech-components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

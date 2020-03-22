@@ -1,6 +1,6 @@
 {
-  "name": "gt-components-example",
-  "homepage": "https://GuildaTech.github.io/gt-components",
+  "name": "guildatech-components-example",
+  "homepage": "https://GuildaTech.github.io/guildatech-components",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -10,7 +10,7 @@
     "react-dom": "^16.4.1",
     "ckeditor4-react": "^1.1.0",
     "react-scripts": "^1.1.4",
-    "gt-components": "file:.."
+    "guildatech-components": "file:.."
   },
   "scripts": {
     "start": "react-scripts start",

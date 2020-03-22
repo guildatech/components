@@ -1,8 +1,8 @@
-# gt-components
+# guildatech-components
 
 > Componentes react para o site da guildatech
 
-[Demo](https://guildatech.github.io/gt-components/)
+[Demo](https://guildatech.github.io/guildatech-components/)
 
 
 ## Usage
@@ -10,7 +10,7 @@
 ```jsx
 import React, { Component } from 'react'
 
-import { Button , Input, Section, Alert, Breadcrumb, GTEditor, Textarea, RenderHTML }from 'gt-components'
+import { Button , Input, Section, Alert, Breadcrumb, GTEditor, Textarea, RenderHTML }from 'guildatech-components'
 
 export default class App extends Component {
 
