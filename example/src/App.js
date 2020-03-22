@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Button , Input, Section, Alert, Breadcrumb, GTEditor}from 'gt-components'
+import { Button , Input, Section, Alert, Breadcrumb, GTEditor, Textarea }from 'gt-components'
 
 export default class App extends Component {
   render () {
@@ -22,6 +22,13 @@ export default class App extends Component {
                   type="text"
                   id="username"
                   minLength="4"
+                />
+          </article>
+          <article>
+          <h4>Textarea</h4>
+          <Textarea
+                  label="Bio"
+                  id="bio"
                 />
           </article>
 
