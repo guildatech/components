@@ -1,5 +1,5 @@
 {
-  "name": "guildatech-components",
+  "name": "@guildatech/guildatech-components",
   "version": "1.0.0",
   "description": "Componentes react para o site da guildatech",
   "author": "GuildaTech",
@@ -21,6 +21,8 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
+  "dependencies": {
+    "ckeditor4-react": "^1.1.0"},
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
