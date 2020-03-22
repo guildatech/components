@@ -1,22 +1,10 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import Button from './components/button'
+import Input from './components/input'
+import Section from './components/section'
+import Alert from './components/alert'
+import Breadcrumb from './components/breadcrumb'
 
-import styles from './styles.css'
+import './styles.css'
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export { Button , Input, Section, Alert, Breadcrumb}
+export default { Button , Input, Section, Alert, Breadcrumb}
