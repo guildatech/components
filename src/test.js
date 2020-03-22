@@ -5,6 +5,7 @@ import Section from './components/section'
 import Breadcrumb from './components/breadcrumb'
 import GTEditor from './components/editor'
 import Textarea from './components/textarea'
+import RenderHTML from './components/renderHTML'
 
 describe('Button', () => {
   it('is truthy', () => {
@@ -45,5 +46,10 @@ describe('GTEditor', () => {
 describe('Textarea', () => {
   it('is truthy', () => {
     expect(Textarea).toBeTruthy()
+  })
+})
+describe('RenderHTML', () => {
+  it('is truthy', () => {
+    expect(RenderHTML).toBeTruthy()
   })
 })

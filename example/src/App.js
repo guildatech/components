@@ -1,8 +1,27 @@
 import React, { Component } from 'react'
 
-import { Button , Input, Section, Alert, Breadcrumb, GTEditor, Textarea }from 'gt-components'
+import { Button , Input, Section, Alert, Breadcrumb, GTEditor, Textarea, RenderHTML }from 'gt-components'
 
 export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      post_body: "<h5>Teste</h5> <br/> <p>paragraph</p> <hr/> <span>Okay?</span>"
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  componentDidMount() {
+  
+     this.setState({ post_body: "<h5>Teste</h5> <br/> <p>paragraph</p> <hr/> <span>Okay?</span>"});
+    
+  }
+  handleChange(event) {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.state[nam] = val;
+    this.setState({ state: this.state });
+  }
   render () {
     return (
       <div>
@@ -71,10 +90,18 @@ export default class App extends Component {
           <article>
             <h4>Editor</h4>
 
-          <GTEditor
+            <GTEditor
                 id="post_body"
+                onChange={this.handleChange}
+                value={this.state.post_body}
               />
           </article>
+
+          <article>
+            <h4>RenderHTML</h4>
+                  <RenderHTML data={this.state.post_body} />
+                </article>
+
         </main>
         <style jsx>{`
        header{
