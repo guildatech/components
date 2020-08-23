@@ -18,7 +18,7 @@ export default class Button extends Component {
     return (
       <button
         type={this.props.type}
-        className="botao-primario"
+        className={this.props.danger ? "danger" : "botao-primario"}
         onClick={this.callOnClick}
         disabled={this.state.disabled}
         style={this.props.style}
@@ -38,6 +38,13 @@ export default class Button extends Component {
             cursor: pointer;
             transition: all 300ms ease;
           }
+          button.danger {
+            background: var(--guildatech-color-red);
+            border: 2px solid var(--guildatech-color-red);
+            font-weight: 900;
+            color: white;
+        
+          }
           button[disabled] {
             opacity: 0.6;
             cursor: not-allowed;
@@ -45,6 +52,10 @@ export default class Button extends Component {
           button:hover {
             box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             border: 2px solid #d1a423;
+          }
+          
+          button.danger:hover {
+            border-color: white !important
           }
         `}</style>
       </button>
