@@ -10,7 +10,7 @@ export default class GTEditor extends Component {
     super(props);
 
     this.state = {
-      data: '',
+      data: props.value || '',
       invalid: false,
       id:
         '_' +
@@ -21,6 +21,7 @@ export default class GTEditor extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.onEditorChange = this.onEditorChange.bind(this);
+    console.log(props);
   }
   componentWillReceiveProps(updatedProps) {
     if (updatedProps.invalid != this.state.invalid) {
@@ -29,6 +30,7 @@ export default class GTEditor extends Component {
     if (updatedProps.value != this.state.value) {
       this.setState({ data: updatedProps.value });
     }
+   // CKEditor.instances.editor1.setData(updatedProps.value);
   }
   uniqueId() {
     return (
