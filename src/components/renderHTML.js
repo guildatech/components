@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class RenderHTML extends Component {
-  render() {
-    return (
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: this.props.data }}></div>
-      </div>
-    );
-  }
+export default function RenderHTML(props) {
+  return (
+    <div>
+      <div dangerouslySetInnerHTML={{ __html: props.data }}></div>
+    </div>
+  );
 }

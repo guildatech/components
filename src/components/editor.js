@@ -1,38 +1,23 @@
 /*
 https://ckeditor.com/docs/ckeditor4/latest/examples/react.html#/
 */
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 import CKEditor from 'ckeditor4-react';
 
-export default class GTEditor extends Component {
-  constructor(props) {
-    super(props);
+export default function GTEditor(props) {
 
-    this.state = {
-      data: props.value || '',
-      invalid: false,
-      id:
-        '_' +
-        Math.random()
-          .toString(36)
-          .substr(2, 9),
-    };
+  const [data, setData] = React.useState(props.value || '');
+  const [invalid, setInvalid] = React.useState(false);
+  const [id, setId] = React.useState('_' + Math.random().toString(36).substr(2, 9));
 
-    this.handleChange = this.handleChange.bind(this);
-    this.onEditorChange = this.onEditorChange.bind(this);
-    console.log(props);
-  }
-  componentWillReceiveProps(updatedProps) {
-    if (updatedProps.invalid != this.state.invalid) {
-      this.setState({ invalid: updatedProps.invalid });
-    }
-    if (updatedProps.value != this.state.value) {
-      this.setState({ data: updatedProps.value });
-    }
-   // CKEditor.instances.editor1.setData(updatedProps.value);
-  }
-  uniqueId() {
+  React.useEffect(() => {
+    setInvalid(props.invalid);
+    setData(props.value);
+    // CKEditor.instances.editor1.setData(props.value);
+  }, [props.invalid, props.value]);
+
+  function uniqueId() {
     return (
       '_' +
       Math.random()
@@ -40,56 +25,53 @@ export default class GTEditor extends Component {
         .substr(2, 9)
     );
   }
-  onEditorChange(evt) {
-    this.props.onChange({
+
+  function onEditorChange(evt) {
+    props.onChange({
       target: {
-        name: this.props.id,
+        name: props.id,
         value: evt.editor.getData(),
       },
     });
-    /*this.props.onChange({
+
+    /*props.onChange({
 		target: {
-		  name: this.props.id,
-		  value: eevt.editor.window.$.document.body.innerText
+		  name: props.id,
+		  value: evt.editor.window.$.document.body.innerText
 		}
-	  })*/
-    this.setState({
-      data: evt.editor.getData(),
-    });
+    })*/
+    setData(evt.editor.getData());
   }
 
-  handleChange(changeEvent) {
-    this.setState({
-      data: changeEvent.target.value,
-    });
+  function handleChange(changeEvent) {
+    setData(changeEvent.target.value);
   }
 
-  //			<SourceEditor data={this.state.data} handler={this.handleChange} />
-  //  <EditorPreview data={this.state.data} />
-  render() {
-    return (
-      <Fragment>
-        <div>
-          <div
-            style={{ overflow: 'auto' }}
-            className={this.state.invalid ? 'is-invalid' : ''}
-          >
-            <CKEditor
-              onBeforeLoad={CKEDITOR => (CKEDITOR.disableAutoInline = true)}
-              name={this.state.id}
-              id={this.props.id}
-              data={this.state.data}
-              onChange={this.onEditorChange}
-              style={{
-                float: 'left',
-                width: '99%',
-                marginLeft: '5px',
-                marginBottom: '15px',
-              }}
-            />
-          </div>
+  //			<SourceEditor data={data} handler={handleChange} />
+  //  <EditorPreview data={data} />
+  
+  return (
+    <Fragment>
+      <div>
+        <div
+          style={{ overflow: 'auto' }}
+          className={invalid ? 'is-invalid' : ''}
+        >
+          <CKEditor
+            onBeforeLoad={CKEDITOR => (CKEDITOR.disableAutoInline = true)}
+            name={id}
+            id={id}
+            data={data}
+            onChange={onEditorChange}
+            style={{
+              float: 'left',
+              width: '99%',
+              marginLeft: '5px',
+              marginBottom: '15px',
+            }}
+          />
         </div>
-      </Fragment>
-    );
-  }
+      </div>
+    </Fragment>
+  );
 }
