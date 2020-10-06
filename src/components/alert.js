@@ -1,40 +1,36 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react'
 
-export default class Alert extends Component {
-  constructor(props) {
-    super(props);
-    const reservedKey = ['closable', 'children', 'collpasible'];
-    let classes = [];
-    Object.keys(props).forEach(key => {
-      if (!reservedKey.includes(key)) {
-        classes.push(key);
-      }
-    });
+export default function Alert(props) {
 
-    this.state = { props, classNames: classes.join(' '), shown: true, collapsed: false };
-    this.closeAlert = this.closeAlert.bind(this);
-    this.collapseAlert = this.collapseAlert.bind(this);
+  const reservedKey = ['closable', 'children', 'collapsible'];
+  let classes = []
+  Object.keys(props).forEach(key => {
+    if(!reservedKey.includes(key)) {
+      classes.push(key);
+    }
+  });
+  const [collapsed, setCollapsed] = React.useState(false);
+  const [shown, setShown] = React.useState(true);
+  const [classNames, setClassNames] = React.useState(classes.join(' '));
+
+  function closeAlert() {
+    setShown(false);
   }
 
-  closeAlert() {
-    this.setState({shown:false})
+  function collapseAlert() {
+    setCollapsed(prev => !prev);
   }
-  collapseAlert() {
-    this.setState({collapsed:!this.state.collapsed})
-  }
-  render() {
-    return (
-      <Fragment>
-        <div>
-        {this.state.shown ?
-          <div className={`alert ${this.state.classNames} ${ this.state.collapsed ? 'collapsed':''}`}>
-            {this.props.closable ? <span onClick={this.closeAlert} className="action closable">x</span> : null}
-            {this.props.collapsible ? <span onClick={this.collapseAlert} className="action collapsible"></span> : null}
+  
+	return (
+		<Fragment>
+			<div>
+        {shown ? 
+          <div className={`alert ${classNames} ${ collapsed ? 'collapsed' : '' } `}>
+            {props.closable ? <span onClick={closeAlert} className="action closable">x</span> : null}
+            {props.collapsible ? <span onClick={collapseAlert} className="action collapsible"></span> : null}
           
-            <span className="content"> {this.props.children}</span>
-            </div>
-            
-          : null}
+            <span className="content"> {props.children}</span>
+          </div> : null }
           <style jsx="true">{`
         .alert > .action {
           font-size: 12px;
@@ -106,8 +102,7 @@ export default class Alert extends Component {
           }
 
         `}</style>
-       </div>
-      </Fragment>
-    );
-  }
+      </div>
+		</Fragment>
+	)
 }

@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-export default class Breadcrumb extends Component {
-  constructor(props) {
-    super(props);
-  }
+import React from 'react';
+export default function Breadcrumb(props) {
 
-  render() {
-    return this.props.path ? (
-      <div>
-        <small>
-          Voce está em <b>{this.props.path}</b>
-        </small>
-        <style jsx="true">{`
-          small {
-            color: #0b0b0b;
-          }
-        `}</style>
-      </div>
-    ) : null;
-  }
+  return props.path ? (
+    <div>
+      <small>
+        Voce está em <b>{props.path}</b>
+      </small>
+      <style jsx="true">{`
+        small {
+          color: #0b0b0b;
+        }
+      `}</style>
+    </div>
+  ) : null;
+  
 }
